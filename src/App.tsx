@@ -3,9 +3,15 @@ function App() {
   return (
     <>
       <header>
-        <h1>DevLog</h1>
-        <p>A developer's learning journal</p>
-      </header>
+  <img
+    src="/profile.jpg"
+    alt="Profile photo of Marina"
+    width="96"
+    height="96"
+  />
+  <h1>DevLog</h1>
+  <p>A developer's learning journal</p>
+</header>
 
       <main>
         <section>
@@ -23,6 +29,14 @@ function App() {
             This DevLog tracks my progress step by step - from scaffolding a Vite project
             all the way to deploying on GitHub Pages.
           </p>
+        </section>
+        <section>
+          <h2>What I'm Learning</h2>
+          <ul>
+            <li>JavaScript</li>
+            <li>React and TypeScript</li>
+            <li>HTML and CSS</li>
+          </ul>
         </section>
       </main>
 
