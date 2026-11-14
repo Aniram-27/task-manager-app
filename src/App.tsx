@@ -1,27 +1,21 @@
-
+// src/App.tsx
 import { Routes, Route, Link } from 'react-router-dom'
-
+import Header from './components/Header.tsx'
+import AboutSection from './components/AboutSection.tsx'
+import Footer from './components/Footer.tsx'
+import WelcomeSection from './components/WelcomeSection.tsx'
 function Home() {
   return (
     <>
-      <header>
-        <img src="/profile.jpg" alt="Profile photo of Marina Gallart" width="96" height="96" />
-        <h1>DevLog</h1>
-        <nav>
-          <Link to="/about">Go to About Page</Link>
-        </nav>
-      </header>
+      <Header />
 
       <main>
         <section>
-          <h2>Welcome</h2>
-          <p>This is the Home page of my DevLog.</p>
+         <WelcomeSection />
         </section>
       </main>
 
-      <footer>
-        <p>&copy; {new Date().getFullYear()} DevLog</p>
-      </footer>
+      <Footer />
     </>
   )
 }
@@ -36,14 +30,10 @@ function About() {
       </header>
 
       <main>
-        <section>
-          <h2>About</h2>
-          <p>
-            Hi! I'm a software engineering student learning to build full-stack web apps.
-            I'm currently working through the SERN stack: SQL Server, Express, React, and Node.
-          </p>
-        </section>
+        <AboutSection />
       </main>
+
+      <Footer />
     </>
   )
 }
@@ -53,7 +43,6 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="*" element={<p>Page not found!</p>} />
     </Routes>
   )
 }
