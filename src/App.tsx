@@ -6,6 +6,11 @@ import Footer from './components/Footer.tsx'
 import WelcomeSection from './components/WelcomeSection.tsx'
 import entries from './data/entries.ts'
 import EntryCard from './components/EntryCard.tsx'
+import NewEntryForm from './components/NewEntryForm.tsx'
+
+const sortedEntries = [...entries].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)
 
 function Home() {
   return (
@@ -42,13 +47,26 @@ function Entries() {
     <>
       <Header />
       <main>
-        <h2>Entries</h2>
-        {entries.map((e) => (
+        <h2>All Entries ({sortedEntries.length})</h2>
+        {sortedEntries.map((e) => (
           <EntryCard key={e.id} entry={e} />
         ))}
       </main>
       <Footer />
     </>
+  )
+}
+
+function NewEntry(){
+  return(
+<>
+  <Header />
+    <main>
+    <h2>New Entry</h2>
+  <NewEntryForm />
+  </main>
+<Footer />
+</>
   )
 }
 
@@ -58,6 +76,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/entries" element={<Entries />} />
+      <Route path="/entries/new" element={<NewEntry />} />
     </Routes>
   )
 }

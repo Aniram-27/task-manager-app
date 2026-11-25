@@ -1,4 +1,4 @@
-import type { Entry } from "../data/entries";
+import type { Entry } from "../types.ts"
 
 interface EntryCardProps {
   entry: Entry;
